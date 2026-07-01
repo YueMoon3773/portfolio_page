@@ -1,0 +1,134 @@
+.sideBar {
+    font-size: 1rem;
+    position: fixed;
+    transform: translateY(-50%);
+    top: 50%;
+    left: clamp(20px, 2%, 2.4rem);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 1.6rem, 24px);
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-direction: row;
+        top: unset;
+        left: 0;
+        // transform: translateX(-50%);
+        margin: 0 auto;
+        bottom: clamp(20px, 2%, 24px);
+        // bottom: 0;
+    }
+}
+
+.sideBarLinkWrapper {
+    font-size: 1rem;
+    padding: 0.36em;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: calc($distance_sm * 1.16);
+}
+
+.sideBarLink {
+    @include flexCenter;
+    padding: 1em;
+    aspect-ratio: 1 / 1;
+    background-color: $ebony_black_color;
+    border-radius: $distance_sm;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 160%;
+        height: 160%;
+        z-index: -1;
+        background: $side_bar_border_color;
+        animation: sideBarBorderSpin 3600ms linear infinite;
+    }
+
+    svg {
+        height: $fs_heading_3sm;
+        width: $fs_heading_3sm;
+        color: $white_text;
+        transition: $transition_effect_md;
+    }
+
+    &.active {
+        svg {
+            color: $primary_darker_color;
+        }
+    }
+
+    &:hover {
+        svg {
+            transform: scale(1.2);
+        }
+    }
+
+    &.home {
+        anchor-name: --home;
+    }
+    &.projects {
+        anchor-name: --projects;
+    }
+    &.profile {
+        anchor-name: --profile;
+    }
+    &.resume {
+        anchor-name: --resume;
+    }
+    &.contact {
+        anchor-name: --contact;
+    }
+
+    .sideBarToolTip {
+        position-area: right;
+        font-size: $fs_normal_md;
+        color: $white_text;
+        background-color: $side_bar_tooltip_bg_color;
+        margin-left: 0.6em;
+        margin-bottom: 0;
+        border: none;
+        outline: none;
+        padding: 0.2em 0.6em;
+        border-radius: $distance_ssm;
+        transition: $transition_effect_md;
+        z-index: 1;
+
+        &:popover-open {
+            animation: fadeIn 660ms ease-in-out;
+        }
+
+        &.home {
+            position-anchor: --home;
+        }
+        &.projects {
+            position-anchor: --projects;
+        }
+        &.profile {
+            position-anchor: --profile;
+        }
+        &.resume {
+            position-anchor: --resume;
+        }
+        &.contact {
+            position-anchor: --contact;
+        }
+
+        @media (max-width: 1024px) {
+        }
+
+        @media (max-width: 768px) {
+            position-area: top;
+            margin-left: 0;
+            margin-bottom: 0.6em;
+        }
+
+        @media (max-width: 460px) {
+        }
+    }
+}

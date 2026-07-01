@@ -1,0 +1,13 @@
+.layoutWrapper {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+}
+
+.canvasBgWrapper {
+    position: absolute;
+    inset: 0;
+    background-color: $ebony_black_color;
+    z-index: -1;
+}

@@ -1,0 +1,140 @@
+.homePageWrapper {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    @include flexColumn;
+    justify-content: stretch;
+}
+
+.homePageContentWrapper {
+    flex: 1;
+    @include flexColumn;
+    align-items: center;
+    justify-content: center;
+
+    .homePageHeading,
+    .homePageHeading span {
+        margin: 0 0 0.66em;
+        font-family: 'Elms Sans';
+        font-weight: 200;
+        font-size: calc($fs_heading_xxl * 1.06);
+        text-align: center;
+        color: $white_text;
+        letter-spacing: 0.1em;
+        word-spacing: -0.16em;
+        cursor: default;
+
+        span {
+            color: $primary_color;
+            font-weight: 300;
+        }
+    }
+
+    .exploreMoreHomeBtn {
+        position: relative;
+        margin-bottom: 1.6em;
+        font-weight: 300;
+        backdrop-filter: blur(3px);
+        border-color: $primary_darker_color;
+
+        // set up background color
+        background: linear-gradient($primary_color 0 0) no-repeat;
+        background-position: calc(200% - var(--pos, 0%)) 100%;
+        background-size: 300% var(--pos, 0.6em);
+
+        transition:
+            all 360ms var(--trans, 0s),
+            background-position 360ms calc(360ms - var(--trans, 0s));
+
+        // set up pulse effect
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border: 2px solid $primary_color;
+            border-radius: inherit;
+            opacity: 0;
+        }
+
+        &::before {
+            inset: -3px;
+        }
+
+        &:hover {
+            --pos: 120%;
+            --trans: 360ms;
+
+            transform: scale(0.96);
+            font-weight: 800;
+            text-shadow:
+                0 0 6px color-mix(in srgb, $ebony_black_color 30%, transparent 100%),
+                0 0 3px color-mix(in srgb, $ebony_black_color 60%, transparent 100%),
+                0 0 2px color-mix(in srgb, $ebony_black_color 90%, transparent 100%);
+            border-color: $primary_darkest_color;
+
+            &::before,
+            &::after {
+                animation: homeExploreBtnPulseOut 1660ms ease-out infinite;
+            }
+
+            &::before {
+                animation-delay: 2060ms;
+            }
+        }
+    }
+
+    .btmText,
+    .btmText a {
+        font-size: $fs_normal_ssm;
+        font-weight: 600;
+        // color: $white_text;
+        color: transparent;
+        cursor: default;
+        background: linear-gradient(90deg in oklch, $light_blue_color, $light_yellow_color);
+        background-clip: text;
+
+        a {
+            font-size: inherit;
+            padding: 0.26em 0.36em;
+
+            background: linear-gradient(90deg in oklch, $light_blue_color, $light_yellow_color);
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+            background-position: left bottom;
+            transition:
+                font-weight 360ms ease,
+                background-size 360ms ease-in-out;
+            cursor: pointer;
+
+            span {
+                font-size: inherit;
+                color: $white_text;
+            }
+
+            &:hover {
+                background-size: 100% 2px;
+            }
+
+            &:not(:hover) {
+                background-position: right bottom;
+            }
+        }
+    }
+}
+
+.my-button {
+    anchor-name: --button;
+}
+
+.tooltip {
+    position-anchor: --button;
+    position-area: right;
+
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: white;
+    font-size: 16px;
+}

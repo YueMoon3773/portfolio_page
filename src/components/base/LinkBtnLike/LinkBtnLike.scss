@@ -1,0 +1,50 @@
+.linkBtnBaseStyle {
+    @include flexCenter;
+    font-size: $fs_normal_md;
+    font-weight: 300;
+    padding: 0.6em 1.2em;
+    color: $white_text;
+    border: 2px solid transparent;
+    border-radius: $distance_sm;
+    background-color: color-mix(in srgb, $snow_white_color 6%, transparent 100%);
+    gap: clamp(24px, 2.4rem, 32px);
+    transition: $transition_effect_md;
+
+    .arrowIconWrapper {
+        $svg_width: $fs_normal_xl;
+
+        @include flexCenter;
+        gap: 10px;
+        aspect-ratio: 1 / 1.06;
+        width: calc($svg_width * 1.16);
+        overflow: hidden;
+        position: relative;
+
+        svg {
+            position: absolute;
+            aspect-ratio: 1 / 1;
+            width: $svg_width;
+            transition: $transition_effect_md;
+        }
+
+        & > *:first-child {
+            transform: translateX(-120%);
+        }
+
+        & > *:last-child {
+            transform: translateX(0);
+        }
+    }
+
+    &:hover {
+        .arrowIconWrapper {
+            & > *:first-child {
+                transform: translateX(0);
+            }
+
+            & > *:last-child {
+                transform: translateX(120%);
+            }
+        }
+    }
+}

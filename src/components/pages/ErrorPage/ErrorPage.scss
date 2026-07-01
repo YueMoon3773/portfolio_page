@@ -1,0 +1,61 @@
+.errorPageWrapper {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    flex: 1;
+    @include flexColumn;
+    align-items: center;
+    justify-content: center;
+
+    .errorPageHeading {
+        margin: 0 0 0.66em;
+        font-family: 'Elms Sans';
+        font-weight: 200;
+        font-size: $fs_heading_xl;
+        text-align: center;
+        color: $white_text;
+        letter-spacing: 0.1em;
+        word-spacing: -0.16em;
+        cursor: default;
+    }
+
+    .btmText,
+    .btmText span {
+        font-size: $fs_normal_ssm;
+        font-weight: 600;
+        color: transparent;
+        cursor: default;
+        background: linear-gradient(90deg in oklch, $light_blue_color, $light_yellow_color);
+        background-clip: text;
+
+        span {
+            font-size: inherit;
+            padding: 0.26em 0.36em;
+
+            background: linear-gradient(90deg in oklch, $light_blue_color, $light_yellow_color);
+            background-repeat: no-repeat;
+            background-size: 0% 2px;
+            background-position: left bottom;
+            transition:
+                font-weight 360ms ease,
+                background-size 360ms ease-in-out;
+            cursor: pointer;
+
+            span {
+                font-size: inherit;
+                color: $white_text;
+            }
+
+            &:hover {
+                background-size: 100% 2px;
+            }
+
+            &:not(:hover) {
+                background-position: right bottom;
+            }
+        }
+    }
+}
+
+.errorPageWrapper {
+}

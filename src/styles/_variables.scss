@@ -24,12 +24,12 @@ $blue_color: #329cf4;
 $light_blue_color: #64b5f6;
 $dark_blue_color: #1976d2;
 
-// $primary_color: #5fa9d3;
-// $primary_light_color: #a0cbe4;
-// $primary_lighter_color: #bfdced;
-// $primary_dark_color: #3f97ca;
-// $primary_darker_color: #3081b0;
-// $primary_darkest_color: #185375;
+$primary_color: #ff4754;
+$primary_light_color: #ff626c;
+$primary_lighter_color: #ff7c85;
+$primary_dark_color: #ff1928;
+$primary_darker_color: #d2000e;
+$primary_darkest_color: #a3000b;
 
 $app_primary_filter_shadow: drop-shadow(0 3px 6px rgba(#000, $alpha: 0.36));
 
@@ -58,6 +58,23 @@ $distance_md: 16px;
 $distance_sm: 8px;
 $distance_ssm: 6px;
 $distance_3sm: 4px;
+
+$transition_effect_md: all 360ms ease-in-out;
+
+/* =============================================== */
+/* PAGE CUSTOM SET UP  */
+/* =============================================== */
+$side_bar_border_color: linear-gradient(
+    45deg,
+    #d2000e 0%,
+    #ff192885 15%,
+    #ff192826 30%,
+    #ff7c8500 50%,
+    #ff192826 70%,
+    #ff192885 85%,
+    #d2000e 100%
+);
+$side_bar_tooltip_bg_color: #40434b;
 
 /* =============================================== */
 /* THEME SET UP  */
