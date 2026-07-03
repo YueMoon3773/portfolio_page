@@ -10,7 +10,7 @@ p {
 
     @include flexColumn;
     align-items: stretch;
-    gap: clamp(16px, 1.8rem, 24px);
+    gap: clamp(20px, 2.4rem, 26px);
 }
 
 .projectItemHeadingWrapper {
@@ -32,7 +32,7 @@ p {
 .projectItemSummary {
     @include flexColumn;
     align-items: stretch;
-    gap: clamp(6px, 0.6em, 10px);
+    gap: clamp(6px, 0.8em, 10px);
 }
 
 .projectItemSmallHeading {
@@ -42,11 +42,14 @@ p {
 .projectItemText {
     font-size: $fs_normal_md;
     line-height: 1.6;
+    text-align: justify;
+    text-wrap: pretty;
 }
 
 .projectItemBottomBtns {
     align-self: center;
-    width: 50%;
+    min-width: 60%;
+    max-width: 80%;
 
     @include flexCenter;
     align-items: stretch;

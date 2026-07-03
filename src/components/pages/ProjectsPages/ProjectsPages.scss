@@ -1,25 +1,23 @@
 .projectsPageWrapper {
-    // min-width: 70%;
-    // width: 80%;
     @include flexColumn;
     align-items: stretch;
 }
 
 .projectPageHeadingWrapper {
-    font-size: 1rem;
+    @include flexCenter;
     margin: 0 auto 1.6em;
-}
-
-.projectsPageHeading {
-    font-size: $fs_heading_lg;
-    color: $white_text;
-    margin: 0 auto 0.3em;
+    
+    .projectsPageHeading {
+        font-size: $fs_heading_lg;
+        color: $white_text;
+        margin: 0 auto 0.3em;
+    }
 }
 
 .projectWrapper {
     align-self: center;
-    min-width: 50%;
-    width: 66%;
+    // min-width: 50%;
+    // width: 66%;
 
     @include flexColumn;
     align-items: stretch;

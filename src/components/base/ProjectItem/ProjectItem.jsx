@@ -20,26 +20,26 @@ const ProjectItem = ({
 }) => {
     return (
         <section className="projectItemWrapper">
-            <FadeUpWrapper className={'projectItemHeadingWrapper'} delay={0.3}>
+            <FadeUpWrapper className={'projectItemHeadingWrapper'} delay={0.3} duration={0.9}>
                 <h2 className="projectItemHeading">{projectName}</h2>
                 <h4 className="projectItemSubHeading">{projectDescription}</h4>
             </FadeUpWrapper>
 
-            <FadeUpWrapper className={'projectItemImages'} delay={0.3}>
+            <FadeUpWrapper className={'projectItemImages'} delay={0.3} duration={0.9}>
                 <ImageCarousel imageList={projectImgs}></ImageCarousel>
             </FadeUpWrapper>
 
-            <FadeUpWrapper className={'projectItemTechnologies'} delay={0.3}>
+            <FadeUpWrapper className={'projectItemTechnologies'} delay={0.3} duration={0.9}>
                 <h3 className="projectItemSmallHeading">Technologies</h3>
                 <p className="projectItemText">{projectTechnologies}</p>
             </FadeUpWrapper>
 
-            <FadeUpWrapper className={'projectItemSummary'} delay={0.3}>
+            <FadeUpWrapper className={'projectItemSummary'} delay={0.3} duration={0.9}>
                 <h3 className="projectItemSmallHeading">Summary</h3>
                 <p className="projectItemText">{projectSummary}</p>
             </FadeUpWrapper>
 
-            <FadeUpWrapper className={'projectItemBottomBtns'} delay={0.3}>
+            <FadeUpWrapper className={'projectItemBottomBtns'} delay={0.3} duration={0.9}>
                 <LinkBtnLike
                     toDestination={projectDemoLink}
                     linkBtnClassName={'projectBottomBtn'}

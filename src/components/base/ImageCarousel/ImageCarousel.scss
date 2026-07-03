@@ -11,8 +11,6 @@
 .imagesWrapper {
     height: 100%;
     display: flex;
-    // @include flexCenter;
-    // gap: 2px;
     scroll-snap-type: x mandatory;
 
     scroll-behavior: smooth;
@@ -21,14 +19,11 @@
 }
 
 .projectImage {
-    // flex: 0 0 100%;
-    // position: absolute;
     width: 100%;
     height: 101%;
-    // width: 100px;
     object-fit: cover;
     object-position: center;
-    // scroll-snap-align: start;
+    scroll-snap-align: start;
     transition: $transition_effect_md;
 }
 

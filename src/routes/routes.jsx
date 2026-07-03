@@ -3,6 +3,7 @@ import AnimatedLayout from '../components/layout/AnimatedLayout/AnimatedLayout';
 import App from '../App';
 import ErrorPage from '../components/pages/ErrorPage/ErrorPage';
 import ProjectsPages from '../components/pages/ProjectsPages/ProjectsPages';
+import ProfilePage from '../components/pages/ProfilePage/ProfilePage';
 
 const routes = [
     {
@@ -19,10 +20,10 @@ const routes = [
                 errorElement: <ErrorPage />,
             },
             {
-                // path: '/profile/:name?',
-                // element: <Profile />,
+                path: '/profile',
+                element: <ProfilePage />,
+                errorElement: <ErrorPage />,
             },
-
             {
                 path: '*',
                 element: <ErrorPage />,

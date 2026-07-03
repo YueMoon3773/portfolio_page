@@ -6,12 +6,18 @@
 
     &.normalPage {
         padding: 4.2rem 0;
+
+        & [class$='PageWrapper'] {
+            margin: 0 auto;
+            // min-width: 50%;
+            width: 60%;
+        }
     }
 }
 
 .canvasBgWrapper {
     position: absolute;
     inset: 0;
-    background-color: $ebony_black_color;
+    background-color: $web_bg_color;
     z-index: -1;
 }
