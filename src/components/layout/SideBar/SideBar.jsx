@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { HomeIcon, ProjectsIcon, ProfileIcon, ContactIcon, ResumeIcon } from '../../../assets/svgIcons';
@@ -87,9 +87,11 @@ const SideBar = ({ delayMotion = 0.36 }) => {
             </div>
 
             <div className="sideBarLinkWrapper">
-                <NavLink
-                    to={'/resume'}
-                    className={({ isActive }) => (isActive ? 'sideBarLink resume active' : 'sideBarLink resume')}
+                <Link
+                    to={'https://drive.google.com/file/d/19zL0Pb5MAqRHD90CgQPvDWxzy_QY6L06/view?usp=sharing'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="sideBarLink resume"
                     onMouseEnter={() => resumePopoverRef.current.showPopover()}
                     onMouseLeave={() => resumePopoverRef.current.hidePopover()}
                 >
@@ -97,7 +99,7 @@ const SideBar = ({ delayMotion = 0.36 }) => {
                     <div ref={resumePopoverRef} popover="manual" className="sideBarToolTip resume">
                         Resume
                     </div>
-                </NavLink>
+                </Link>
             </div>
 
             <div className="sideBarLinkWrapper">
